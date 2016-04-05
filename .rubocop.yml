@@ -1,0 +1,327 @@
+AllCops:
+  Include:
+    - 'config.ru'
+  Exclude:
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+
+  TargetRubyVersion: 2.2
+
+  # Cop names are not displayed in offense messages by default. Change behavior
+  # by overriding DisplayCopNames, or by giving the -D/--display-cop-names
+  # option.
+  DisplayCopNames: true
+  # Style guide URLs are not displayed in offense messages by default. Change
+  # behavior by overriding DisplayStyleGuide, or by giving the
+  # -S/--display-style-guide option.
+  DisplayStyleGuide: true
+  UseCache: true
+  MaxFilesInCache: 5000
+# Adapted from: https://github.com/simplybusiness/how-we-roll/blob/master/development/RUBYSTYLEGUIDE.markdown
+
+Rails:
+  Enabled: true
+
+## Rails Cops
+Rails/TimeZone:
+  Enabled: true
+  Severity: warning
+  Exclude:
+    - spec/features/step_definitions/valid_timezone_steps.rb
+
+Rails/Date:
+  Enabled: true
+  Severity: warning
+
+Rails/Delegate:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
+
+Rails/Validation:
+  Enabled: false
+
+Rails/FindBy:
+  Enabled: false
+
+Rails/ActionFilter:
+  Enabled: false
+
+Rails/ReadWriteAttribute:
+  Enabled: false
+
+Rails/PluralizationGrammar:
+  Enabled: false
+
+## Standard Cops
+Style/VariableName:
+  Enabled: true
+  EnforcedStyle: snake_case
+  SupportedStyles:
+    - snake_case
+    - camelCase
+
+Style/TrailingBlankLines:
+  Enabled: true
+  Severity: warning
+
+TrailingWhitespace:
+  Enabled: true
+  Severity: warning
+
+Lint/DuplicateMethods:
+  Enabled: true
+  Severity: warning
+
+Style/SpecialGlobalVars:
+  Enabled: true
+  Severity: warning
+
+Lint/DeprecatedClassMethods:
+  Enabled: true
+
+Style/ColonMethodCall:
+  Enabled: true
+  Severity: warning
+
+Style/RedundantReturn:
+  Enabled: true
+  Severity: warning
+
+Style/NestedParenthesizedCalls:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+
+Style/RedundantParentheses:
+  Enabled: false
+
+Style/UnneededInterpolation:
+  Enabled: false
+
+Style/IndentAssignment:
+  Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
+
+Style/ZeroLengthPredicate:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Style/NestedModifier:
+  Enabled: false
+
+Style/IfInsideElse:
+  Enabled: false
+
+Lint/IneffectiveAccessModifier:
+  Enabled: false
+
+Lint/ImplicitStringConcatenation:
+  Enabled: false
+
+Performance/Casecmp:
+  Enabled: false
+
+Performance/RedundantMerge:
+  Enabled: false
+
+Performance/TimesMap:
+  Enabled: false
+
+Performance/RangeInclude:
+  Enabled: false
+
+Performance/RedundantBlockCall:
+  Enabled: false
+
+Performance/RedundantMatch:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: true
+  Severity: warning
+
+Lint/UnusedBlockArgument:
+  Enabled: true
+  Severity: warning
+
+Performance/Count:
+  Enabled: true
+  Severity: warning
+
+Lint/UnderscorePrefixedVariableName:
+  Enabled: true
+  Severity: warning
+
+# All cops below this line will be enabled incremently in seperate PR's so changes and proposed rules can be reviewed by the team
+
+# Ensure all models are documented
+Style/Documentation:
+  Enabled: false
+  Include:
+    - app/models/**/*.rb
+
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
+Style/SpaceInsideBlockBraces:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceInsideBrackets:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces, SupportedStyles.
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceInsideParens:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceBeforeComma:
+  Enabled: false
+
+Style/IndentationConsistency:
+  Enabled: false
+
+Style/CaseIndentation:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/MethodDefParentheses:
+  Enabled: false
+
+Style/MultilineTernaryOperator:
+  Enabled: false
+
+Style/NestedTernaryOperator:
+  Enabled: false
+
+Style/UnlessElse:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: AllowSafeAssignment.
+Style/ParenthesesAroundCondition:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/MultilineBlockLayout:
+  Enabled: false
+
+Style/InitialIndentation:
+  Enabled: false
+
+Style/OptionalArguments:
+  Enabled: false
+
+Lint/DuplicatedKey:
+  Enabled: false
+
+Performance/StringReplacement:
+  Enabled: false
+
+Lint/CircularArgumentReference:
+   Enabled: false
+
+Lint/AmbiguousOperator:
+  Enabled: false
+
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Lint/BlockAlignment:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: AlignWith, SupportedStyles, AutoCorrect.
+Lint/DefEndAlignment:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Lint/DeprecatedClassMethods:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: AlignWith, SupportedStyles, AutoCorrect.
+Lint/EndAlignment:
+  Enabled: false
+
+Lint/UselessAccessModifier:
+  Enabled: false
+
+Lint/Void:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Performance/Detect:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/Alias:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle, SupportedLastArgumentHashStyles.
+Style/AlignHash:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyleInsidePipes, SupportedStyles.
+Style/SpaceAroundBlockParameters:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/SpaceAroundEqualsInParameterDefault:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/RedundantBegin:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/RedundantException:
+  Enabled: false
+
+# Offense count: 91
+# Cop supports --auto-correct.
+Style/EmptyLines:
+  Enabled: false
+
+Style/SelfAssignment:
+  Enabled: false
+
+Style/LambdaCall:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Style/For:
+  Enabled: false
+
+Style/ExtraSpacing:
+  Enabled: false
+
+# Offense count: 38
+# Configuration parameters: CountComments.
+Metrics/ClassLength:
+  Max: 512
+  Enabled: false
