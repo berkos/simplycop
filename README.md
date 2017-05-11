@@ -1,5 +1,7 @@
 # Simplycop
 
+**Note: Use of Simplycop for new projects is deprecated. Please use [Rubocop](https://github.com/bbatsov/rubocop) directly, as per [New projects guidelines](https://github.com/simplybusiness/know/blob/master/how-we-roll/development/NEW_PROJECT_GUIDELINES.markdown).**
+
 Provides standard shared rubocop configuration for Simply Business applications. No more copying `.rubocop.yml`, no more out-of-sync configuration files. Yay!
 
 ## Installation
